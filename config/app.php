@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'Melbourne',
+    'timezone' => 'Australia/Melbourne',
 
     /*
     |--------------------------------------------------------------------------
