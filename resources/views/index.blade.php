@@ -29,7 +29,10 @@
                         @else
                             <a href="{{route('login')}}" class="px-2">Log in</a>
 
-                            <a href="{{route('register')}}" class="px-2">Register</a>
+                            @if (App\Models\User::count() == 0)
+                                <a href="{{route('register')}}" class="px-2">Register</a>
+                            @endif
+
                         @endauth
                     </div>
                 </div>
