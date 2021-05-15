@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/* Sensor system that contains LED actuators.
+ */
 class sensor_system extends Model
 {
     use HasFactory;

@@ -5,6 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/* Database entry for sensor data, this data
+ * is from the DHT22 and BMP388 sensor.
+ */
 class sensor_data extends Model
 {
     use HasFactory;

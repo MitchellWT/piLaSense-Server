@@ -7,8 +7,8 @@ use App\Models\sensor_data;
 
 class SensorDataController extends Controller
 {
-    /*
-     * Stores a newly created sensor system
+    /* Stores a newly recieved set of sensor
+     * data.
      */
     public function store(Request $request)
     {
@@ -18,18 +18,21 @@ class SensorDataController extends Controller
         $sensor_system = $sensor_data->sensor_system;
         $led_value = 'none';
 
+        // Check for green LED boundaries.
         if ($temp_average >= $sensor_system->green_lower &&
             $temp_average <= $sensor_system->green_upper) {
             $led_value = 'green';
             $sensor_system->status = 'green';
             $sensor_system->save();
 
+        // Check for yellow LED boundaries.
         } else if ($temp_average >= $sensor_system->yellow_lower &&
         $temp_average <= $sensor_system->yellow_upper) {
             $led_value = 'yellow';
             $sensor_system->status = 'yellow';
             $sensor_system->save();
 
+        // Check for red LED boundaries.
         } else if ($temp_average >= $sensor_system->red_lower &&
         $temp_average <= $sensor_system->red_upper) {
             $led_value = 'red';
